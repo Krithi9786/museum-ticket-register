@@ -1,0 +1,264 @@
+/ # hbase shell
+2023-03-16 17:50:10,648 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.3.2, r1bedb5bfbb5a99067e7bc54718c3124f632b6e17, Mon Mar 19 18:47:19 UTC 2018
+
+hbase(main):001:0> create 'museum','vis_details','mus_details','sta_details'
+0 row(s) in 1.9210 seconds
+
+=> Hbase::Table - museum
+hbase(main):002:0> list
+TABLE                                                                                                                                                           
+museum                                                                                                                                                     
+1 row(s) in 0.0590 seconds
+
+=> ["museum"]
+hbase(main):003:0> put 'museum','01','vis_details:name','ram'
+0 row(s) in 0.3020 seconds
+
+hbase(main):004:0> put 'museum','01','vis_details:age','30'
+0 row(s) in 0.0280 seconds
+
+hbase(main):005:0> put 'museum','01','vis_details:date','june23'
+0 row(s) in 0.0250 seconds
+
+hbase(main):006:0> put 'museum','01','mus_details:name','fort'
+0 row(s) in 0.0300 seconds
+
+hbase(main):007:0> put 'museum','01','mus_details:location','chennai'
+0 row(s) in 0.0140 seconds
+
+hbase(main):008:0> put 'museum','01','mus_details:time','9to4'
+0 row(s) in 0.0140 seconds
+
+hbase(main):009:0> put 'museum','01','sta_details:name','rani'
+0 row(s) in 0.0190 seconds
+
+hbase(main):010:0> put 'museum','01','sta_details:id','101'
+0 row(s) in 0.0220 seconds
+
+hbase(main):011:0> put 'museum','01','sta_details:age','31'
+0 row(s) in 0.0270 seconds
+
+hbase(main):012:0> put 'museum','01','sta_details:salary','20000'
+0 row(s) in 0.0270 seconds
+
+hbase(main):013:0> put 'museum','02','vis_details:name','sam'
+0 row(s) in 0.0220 seconds
+
+hbase(main):014:0> put 'museum','02','vis_details:age','53'
+0 row(s) in 0.0160 seconds
+
+hbase(main):015:0> put 'museum','02','mus_details:name','waxworld'
+0 row(s) in 0.0270 seconds
+
+hbase(main):016:0> put 'museum','02','mus_details:location','ooty'
+0 row(s) in 0.0250 seconds
+
+hbase(main):017:0> put 'museum','02','mus_details:time','10to5'
+0 row(s) in 0.0200 seconds
+
+hbase(main):018:0> put 'museum','02','sta_details:name','lakshmi'
+0 row(s) in 0.0290 seconds
+
+hbase(main):019:0> put 'museum','02','sta_details:id','102'
+0 row(s) in 0.0200 seconds
+
+hbase(main):020:0> put 'museum','02','sta_details:age','33'
+0 row(s) in 0.0190 seconds
+
+hbase(main):021:0> put 'museum','02','sta_details:salary','23000'
+0 row(s) in 0.0250 seconds
+
+hbase(main):022:0> put 'museum','03','vis_details:name','anu'
+0 row(s) in 0.3020 seconds
+
+hbase(main):023:0> put 'museum','03','vis_details:age','10'
+0 row(s) in 0.0280 seconds
+
+hbase(main):024:0> put 'museum','03','vis_details:date','march24'
+0 row(s) in 0.0250 seconds
+
+hbase(main):025:0> put 'museum','03','mus_details:name','gedeecar'
+0 row(s) in 0.0300 seconds
+
+hbase(main):026:0> put 'museum','03','mus_details:location','coimbatore'
+0 row(s) in 0.0140 seconds
+
+hbase(main):027:0> put 'museum','03','mus_details:time','9to3'
+0 row(s) in 0.0140 seconds
+
+hbase(main):028:0> put 'museum','03','sta_details:name','selvan'
+0 row(s) in 0.0190 seconds
+
+hbase(main):029:0> put 'museum','03','sta_details:id','103'
+0 row(s) in 0.0220 seconds
+
+hbase(main):030:0> put 'museum','03','sta_details:age','35'
+0 row(s) in 0.0270 seconds
+
+hbase(main):031:0> put 'museum','03','sta_details:salary','25000'
+0 row(s) in 0.0270 seconds
+
+hbase(main):032:0> get 'museum','01'
+COLUMN                                    CELL                                                                                                                  
+ vis_details:name                        timestamp=1678990472589, value=ram                                                                               
+ vis_details:age                            timestamp=1678990435991, value=30                                                                                
+ vis_details:date                           timestamp=1678990078779, value=june23                                                                               
+ mus_details:name                            timestamp=1678990151721, value=fort                                                                    
+ mus_details:location                         timestamp=1678990107273, value=chennai                                                                           
+ mus_details:time                          timestamp=1678989957023, value=9to4                                                                      
+ sta_details:name                        timestamp=1678990377698, value=rani                                                                           
+ sta_details:id                         timestamp=1678990340801, value=101   
+ sta_details:age                            timestamp=1678990435971, value=31   
+ sta_details:salary                         timestamp=1678990107263, value=20000
+                                                                          
+1 row(s) in 0.1660 seconds
+
+hbase(main):033:0> get 'museum','02'
+COLUMN                                    CELL                                                                                                                  
+ vis_details:name                         timestamp=1678990877495, value=sam                                                                                
+ vis_details:age                               timestamp=1678990697077, value=53                                                               
+ mus_details:name                          timestamp=1678990789753, value=waxworld                                                                            
+ mus_details:location                       timestamp=1678990632340, value=ooty 
+ mus_details:time                             timestamp=1678990340811, value=10to5
+ sta_details:name                               timestamp=16789900787569, value=lakshmi 
+ sta_details:id                                   timestamp=1678990340831, value=102
+ sta_details:age                                timestamp=1678990377678, value=33
+ sta_details:salary                          timestamp=1678990107233, value=23000                        
+1 row(s) in 0.0490 seconds
+
+hbase(main):034:0> get 'museum','03'
+COLUMN                                    CELL                                                                                                                  
+ vis_details:name                        timestamp=1678990372559, value=anu                                                                              
+ vis_details:age                            timestamp=1678990335971, value=10                                                                              
+ vis_details:date                           timestamp=1678990088719, value=march24                                                                               
+ mus_details:name                            timestamp=1678990251711, value=gedeecar                                                                
+ mus_details:location                         timestamp=1678990307253, value=coimbatore                                                                          
+ mus_details:time                          timestamp=1678989947024, value=9to3                                                                     
+ sta_details:name                        timestamp=1678990347648, value=selvan                                                                           
+ sta_details:id                         timestamp=1678990330881, value=103   
+ sta_details:age                            timestamp=1678990335941, value=35   
+ sta_details:salary                         timestamp=16789903025263, value=25000
+                                                                                                                                                      
+1 row(s) in 0.0720 seconds
+
+hbase(main):035:0> scan 'museum'
+ROW                                       COLUMN+CELL                                                                                                           
+ 01                                       column=vis_details:name,timestamp=1678990472589, value=ram                                                      
+ 01                                       column=vis_details:age,timestamp=1678990435991, value=30                                                         
+ 01                                       column=vis_details:date,timestamp=1678990078779, value=june23                                                       
+ 01                                       column=mus_details:name,timestamp=1678990151721, value=fort                                                 
+ 01                                       column=mus_details:location,timestamp=1678990107273, value=chennai                                                     
+ 01                                       column=mus_details:time,timestamp=1678989957023, value=9to4                                                         
+ 01                                       column=sta_details:name,timestamp=1678990377698, value=rani                                                    
+ 01                                       column=sta_details:id,timestamp=1678990340801, value=101                                                        
+ 01                                       column=sta_details:age,timestamp=1678990435971, value=31                                                         
+ 01                                       column=sta_details:salary,timestamp=1678990107263, value=20000                                                                                                                        
+ 02                                       column=vis_details:name,timestamp=1678990877495, value=sam     
+ 02                                       column=vis_details:age,timestamp=1678990697077, value=53                                                              
+ 02                                       column=mus_details:name,timestamp=1678990789753, value=waxworld                                                        
+ 02                                       column=mus_details:location,timestamp=1678990632340, value=ooty                                                  
+ 02                                       column=mus_details:time,timestamp=1678990340811, value=10to5                                                           
+ 02                                       column=sta_details:name,timestamp=16789900787569, value=lakshmi 
+ 02                                       column=sta_details:id,timestamp=1678990340831, value=102                   
+ 02                                       column=sta_details:age,timestamp=1678990377678, value=33                                                        
+ 02                                       column=sta_details:salary,timestamp=1678990107233, value=23000  
+ 03                                       column=vis_details:name,timestamp=1678990372559, value=anu
+ 03                                       column=vis_details:age,timestamp=1678990335971, value=10 
+ 03                                       column=vis_details:date,timestamp=1678990088719, value=march24  
+ 03                                       column=mus_details:name,timestamp=1678990251711, value=gedeecar
+ 03                                       column=mus_details:location,timestamp=1678990307253, value=coimbatore   
+ 03                                       column=mus_details:time,timestamp=1678989947024, value=9to3 
+ 03                                       column=sta_details:name,timestamp=1678990347648, value=selvan  
+ 03                                       column=sta_details:id,timestamp=1678990330881, value=103   
+ 03                                       column=sta_details:age,timestamp=1678990335941, value=35  
+ 03                                       column=sta_details:salary,timestamp=16789903025263, value=25000                                          
+3 row(s) in 0.2030 seconds
+
+hbase(main):036:0> put 'museum','01','mus_details:time','9to5'
+0 row(s) in 0.0180 seconds
+
+hbase(main):037:0> get 'museum','01'
+COLUMN                                    CELL 
+ vis_details:name                        timestamp=1678990472589, value=ram                                                                               
+ vis_details:age                            timestamp=1678990435991, value=30                                                                                
+ vis_details:date                           timestamp=1678990078779, value=june23                                                                               
+ mus_details:name                            timestamp=1678990151721, value=fort                                                                    
+ mus_details:location                         timestamp=1678990107273, value=chennai                                                                           
+ mus_details:time                          timestamp=1678989957123, value=9to5                                                                      
+ sta_details:name                        timestamp=1678990377698, value=rani                                                                           
+ sta_details:id                         timestamp=1678990340801, value=101   
+ sta_details:age                            timestamp=1678990435971, value=31   
+ sta_details:salary                         timestamp=1678990107263, value=20000                                                                                                                 
+                                                                           
+1 row(s) in 0.0900 seconds
+
+hbase(main):038:0> put 'museum','02','vis_details:date','july23'
+0 row(s) in 0.0250 seconds
+
+hbase(main):039:0> get 'museum','02'
+COLUMN                                    CELL                                                                                                                  
+ vis_details:name                         timestamp=1678990877495, value=sam                                                                                
+ vis_details:age                               timestamp=1678990697077, value=53
+ vis_details:date                               timestamp=1678990697597, value=july23                                                               
+ mus_details:name                          timestamp=1678990789753, value=waxworld                                                                            
+ mus_details:location                       timestamp=1678990632340, value=ooty 
+ mus_details:time                             timestamp=1678990340811, value=10to5
+ sta_details:name                               timestamp=16789900787569, value=lakshmi 
+ sta_details:id                                   timestamp=1678990340831, value=102
+ sta_details:age                                timestamp=1678990377678, value=33
+ sta_details:salary                          timestamp=1678990107233, value=23000                                                                          
+1 row(s) in 0.0470 seconds
+
+hbase(main):040:0> delete 'museum','03','sta_details:salary'
+0 row(s) in 0.0870 seconds
+
+hbase(main):041:0> get 'museum','03'
+COLUMN                                    CELL                                                                                                                  
+ vis_details:name                        timestamp=1678990372559, value=anu                                                                              
+ vis_details:age                            timestamp=1678990335971, value=10                                                                              
+ vis_details:date                           timestamp=1678990088719, value=march24                                                                               
+ mus_details:name                            timestamp=1678990251711, value=gedeecar                                                                
+ mus_details:location                         timestamp=1678990307253, value=coimbatore                                                                          
+ mus_details:time                          timestamp=1678989947024, value=9to3                                                                     
+ sta_details:name                        timestamp=1678990347648, value=selvan                                                                           
+ sta_details:id                         timestamp=1678990330881, value=103   
+ sta_details:age                            timestamp=1678990335941, value=35                                                                            
+1 row(s) in 0.0540 seconds
+
+hbase(main):042:0> scan 'museum'
+ROW                                       COLUMN+CELL                                                                                                           
+ 01                                       column=vis_details:name,timestamp=1678990472589, value=ram                                                      
+ 01                                       column=vis_details:age,timestamp=1678990435991, value=30                                                         
+ 01                                       column=vis_details:date,timestamp=1678990078779, value=june23                                                       
+ 01                                       column=mus_details:name,timestamp=1678990151721, value=fort                                                 
+ 01                                       column=mus_details:location,timestamp=1678990107273, value=chennai                                                     
+ 01                                       column=mus_details:time,timestamp=1678989957023, value=9to4                                                         
+ 01                                       column=sta_details:name,timestamp=1678990377698, value=rani                                                    
+ 01                                       column=sta_details:id,timestamp=1678990340801, value=101                                                        
+ 01                                       column=sta_details:age,timestamp=1678990435971, value=31                                                         
+ 01                                       column=sta_details:salary,timestamp=1678990107263, value=20000                                                                                                                        
+ 02                                       column=vis_details:name,timestamp=1678990877495, value=sam     
+ 02                                       column=vis_details:age,timestamp=1678990697077, value=53
+ 02                                       column=vis_details:date,timestamp=1678990697597, value=july23                          
+ 02                                       column=mus_details:name,timestamp=1678990789753, value=waxworld                                                        
+ 02                                       column=mus_details:location,timestamp=1678990632340, value=ooty                                                  
+ 02                                       column=mus_details:time,timestamp=1678990340811, value=9to5                                                           
+ 02                                       column=sta_details:name,timestamp=16789900787569, value=lakshmi 
+ 02                                       column=sta_details:id,timestamp=1678990340831, value=102                   
+ 02                                       column=sta_details:age,timestamp=1678990377678, value=33                                                        
+ 02                                       column=sta_details:salary,timestamp=1678990107233, value=23000  
+ 03                                       column=vis_details:name,timestamp=1678990372559, value=anu
+ 03                                       column=vis_details:age,timestamp=1678990335971, value=10 
+ 03                                       column=vis_details:date,timestamp=1678990088719, value=march24  
+ 03                                       column=mus_details:name,timestamp=1678990251711, value=gedeecar
+ 03                                       column=mus_details:location,timestamp=1678990307253, value=coimbatore   
+ 03                                       column=mus_details:time,timestamp=1678989947024, value=9to3 
+ 03                                       column=sta_details:name,timestamp=1678990347648, value=selvan  
+ 03                                       column=sta_details:id,timestamp=1678990330881, value=103   
+ 03                                       column=sta_details:age,timestamp=1678990335941, value=35                                                 
+3 row(s) in 0.1440 seconds
+
+hbase(main):043:0> 
